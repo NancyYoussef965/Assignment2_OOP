@@ -5,14 +5,20 @@ namespace Assignment2_OOP
     internal class Program
     {
         #region Q1
-        public struct Person
-        {
-            public string Name;
-            public int Age;
-        }
+        //public struct Person
+        //{
+        //    public string Name;
+        //    public int Age;
+        //}
         #endregion
 
-        #region
+        #region Q2
+        public struct Point
+        {
+            public double X;
+            public double Y;
+        }
+
         #endregion
 
         #region
@@ -23,28 +29,44 @@ namespace Assignment2_OOP
         {
             #region 1-Define a struct "Person" with properties "Name" and "Age". Create an array of three "Person" objects and populate it with data. Then, write a C# program to display the details of all the persons in the array.
 
-            Person[] people = new Person[3];
+            //Person[] people = new Person[3];
 
-            people[0].Name = "Ahmed";
-            people[0].Age = 25;
+            //people[0].Name = "Ahmed";
+            //people[0].Age = 25;
 
-            people[1].Name = "Mona";
-            people[1].Age = 30;
+            //people[1].Name = "Mona";
+            //people[1].Age = 30;
 
-            people[2].Name = "Khaled";
-            people[2].Age = 22;
+            //people[2].Name = "Khaled";
+            //people[2].Age = 22;
 
-            Console.WriteLine("List of People:");
-            foreach (Person p in people)
-            {
-                Console.WriteLine($"Name: {p.Name}, Age: {p.Age}");
-            }
+            //Console.WriteLine("List of People:");
+            //foreach (Person p in people)
+            //{
+            //    Console.WriteLine($"Name: {p.Name}, Age: {p.Age}");
+            //}
+            #endregion
+
+            #region 2-Create a struct called "Point" to represent a 2D point with properties "X" and   "Y". Write a C# program that takes two points as input from the user and calculates the distance between them.
+            Point P1;
+            Console.Write("Enter the X coordinate of Point 1: ");
+            P1.X=double.Parse(Console.ReadLine());
+
+            Console.Write("Enter the Y coordinate of Point 1: ");
+            P1.Y = double.Parse(Console.ReadLine());
+            Point P2;
+            Console.Write("Enter the X coordinate of Point 2: ");
+            P2.X = double.Parse(Console.ReadLine());
+            Console.Write("Enter the Y coordinate of Point 2: ");
+            P2.Y = double.Parse(Console.ReadLine());
+            double distance = Math.Sqrt(Math.Pow(P2.X - P1.X, 2) + Math.Pow(P2.Y - P1.Y, 2));
+            Console.WriteLine($"The distance between the two points is: {distance:F2}");
+
+            Console.ReadLine();
             #endregion
 
             #region
-            #endregion
 
-            #region
             #endregion
 
             #region
