@@ -5,11 +5,11 @@ namespace Assignment2_OOP
     internal class Program
     {
         #region Q1
-        public struct Person
-        {
-            public string Name;
-            public int Age;
-        }
+        //public struct Person
+        //{
+        //    public string Name;
+        //    public int Age;
+        //}
         #endregion
 
         #region Q2
@@ -21,9 +21,49 @@ namespace Assignment2_OOP
 
         #endregion
 
+        #region Q4
+        public struct Rectangle
+        {
+            private double width;
+            private double height;
 
+            public double Width
+            {
+                get { return width; }
+                set
+                {
+                    if (value >= 0)
+                        width = value;
+                    else
+                        Console.WriteLine("Error: Width cannot be negative.");
+                }
+            }
 
-        #region
+            public double Height
+            {
+                get { return height; }
+                set
+                {
+                    if (value >= 0)
+                        height = value;
+                    else
+                        Console.WriteLine("Error: Height cannot be negative.");
+                }
+            }
+
+            public double Area
+            {
+                get { return Width * Height; } 
+            }
+
+            public void DisplayInfo()
+            {
+                Console.WriteLine($"Width: {Width}"); 
+                Console.WriteLine($"Height: {Height}"); 
+                Console.WriteLine($"Area: {Area}");
+            }
+        }
+
 
         #endregion
         static void Main(string[] args)
@@ -68,28 +108,39 @@ namespace Assignment2_OOP
 
             #region 3-Create a struct called "Person" with properties "Name" and "Age". Write a C# program that takes details of 3 persons as input from the user and displays the name and age of the oldest person.
 
-            Person[] people = new Person[3];
-            for (int i = 0; i < 3; i++)
-            {
-                Console.Write($"Enter name of person {i + 1}: ");
-                people[i].Name = Console.ReadLine();
-                Console.Write($"Enter age of person {i + 1}: ");
-                people[i].Age = int.Parse(Console.ReadLine());
-            }
+            //Person[] people = new Person[3];
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.Write($"Enter name of person {i + 1}: ");
+            //    people[i].Name = Console.ReadLine();
+            //    Console.Write($"Enter age of person {i + 1}: ");
+            //    people[i].Age = int.Parse(Console.ReadLine());
+            //}
 
-            Person oldest = people[0];
-            for (int i = 1; i < 3; i++)
-            {
-                if (people[i].Age > oldest.Age)
-                {
-                    oldest = people[i];
-                }
-            }
-            Console.WriteLine($"\nThe oldest person is: {oldest.Name}, Age: {oldest.Age}");
-            Console.ReadLine();
+            //Person oldest = people[0];
+            //for (int i = 1; i < 3; i++)
+            //{
+            //    if (people[i].Age > oldest.Age)
+            //    {
+            //        oldest = people[i];
+            //    }
+            //}
+            //Console.WriteLine($"\nThe oldest person is: {oldest.Name}, Age: {oldest.Age}");
+            //Console.ReadLine();
             #endregion
 
-            #region
+            #region 4.Create a struct named Rectangle that represents a rectangle with the following fields:
+            Rectangle rect = new Rectangle();
+
+
+            rect.Width = 5.5;
+            rect.Height = 3.2;
+
+
+            rect.DisplayInfo();
+
+            Console.ReadLine();
+
             #endregion
         }
     }
